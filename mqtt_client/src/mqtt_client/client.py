@@ -7,18 +7,36 @@ from paho.mqtt.properties import Properties
 from paho.mqtt.reasoncodes import ReasonCode
 
 
-def on_connect(_client: Client, _userdata: Any, _connect_flags: Any, reason_code: ReasonCode, _properties: Properties) -> None:
+def on_connect(
+    _client: Client,
+    _userdata: Any,
+    _connect_flags: Any,
+    reason_code: ReasonCode,
+    _properties: Properties,
+) -> None:
     if reason_code.is_failure:
         print(f"Failed to connect, return code {reason_code}")
         return
     print("Connected to broker")
 
 
-def on_disconnect(_client: Client, _userdata: Any, _disconnect_flags: Any, reason_code: ReasonCode, _properties: Properties) -> None:
+def on_disconnect(
+    _client: Client,
+    _userdata: Any,
+    _disconnect_flags: Any,
+    reason_code: ReasonCode,
+    _properties: Properties,
+) -> None:
     print(f"Disconnected with reason code {reason_code}")
 
 
-def on_publish(_client: Client, _userdata: Any, mid: int, _reason_code: ReasonCode, _properties: Properties) -> None:
+def on_publish(
+    _client: Client,
+    _userdata: Any,
+    mid: int,
+    _reason_code: ReasonCode,
+    _properties: Properties,
+) -> None:
     print(f"Message {mid} published successfully")
 
 
@@ -35,7 +53,9 @@ class MQTTClient:
     loop_start() which spawns a background thread.
     """
 
-    def __init__(self, client_id: str, callbacks: dict[str, Callable] | None = None) -> None:
+    def __init__(
+        self, client_id: str, callbacks: dict[str, Callable] | None = None
+    ) -> None:
         self.client = Client(CallbackAPIVersion.VERSION2, client_id=client_id)
 
         self.client.on_connect = on_connect
