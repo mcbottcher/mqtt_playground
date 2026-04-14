@@ -7,7 +7,7 @@ A template project for testing out different MQTT concepts. Run two clients and 
    ```bash
    sudo apt install mosquitto mosquitto-clients tmux
    ```
-   
+
    **Important:** Disable the Mosquitto systemd service to avoid conflicts with the broker started by `launch.sh`:
    ```bash
    sudo systemctl disable mosquitto
