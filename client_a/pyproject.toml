@@ -1,0 +1,11 @@
+[project]
+name = "mqtt-client-a"
+version = "0.1.0"
+description = "MQTT client"
+requires-python = ">=3.10"
+dependencies = [
+    "mqtt-client",
+]
+
+[tool.uv.sources]
+mqtt-client = { workspace = true }
