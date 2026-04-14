@@ -1,0 +1,2 @@
+[tool.uv.workspace]
+members = ["mqtt_client", "client_a", "client_b"]

@@ -1,0 +1,12 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mqtt-client"
+version = "0.1.0"
+description = "Shared MQTT client context manager"
+requires-python = ">=3.10"
+dependencies = [
+    "paho-mqtt>=2.1.0",
+]
