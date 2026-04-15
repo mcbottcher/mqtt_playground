@@ -8,7 +8,8 @@ def main() -> None:
         client.loop_start()  # spawns a background thread to drive the network loop
         counter = 0
         while True:
-            client.publish("playground/messages", payload=str(counter), qos=0)
+            client.publish("playground/messages/a", payload=str(counter), qos=0)
+            client.publish("playground/messages/b", payload=str(counter), qos=0)
             counter += 1
             time.sleep(1.0)
 

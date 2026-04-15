@@ -58,6 +58,8 @@ class MQTTClient:
     ) -> None:
         self.client = Client(CallbackAPIVersion.VERSION2, client_id=client_id)
 
+        self.client.username_pw_set(client_id, "password")
+
         self.client.on_connect = on_connect
         self.client.on_disconnect = on_disconnect
         self.client.on_publish = on_publish

@@ -17,7 +17,7 @@ tmux new-session -d -s mqtt -x 200 -y 50
 tmux set-hook -t mqtt session-closed 'run-shell "pkill mosquitto"'
 
 # Pane 0 (left side): Start the MQTT broker with its config file
-tmux send-keys -t mqtt "cd '$REPO_ROOT' && mosquitto -c broker/mosquitto.conf" Enter
+tmux send-keys -t mqtt "cd '$REPO_ROOT' && mosquitto -c broker/mosquitto.conf -v" Enter
 
 # Give the broker time to start before launching clients
 sleep 1.5
