@@ -1,6 +1,14 @@
 # mqtt_playground
 A template project for testing out different MQTT concepts. Run two clients and a broker locally. Simply alter code in *client_a* and *client_b* to test different things.
 
+## Branches
+
+Each branch demonstrates a different MQTT concept. You can checkout a branch to explore a specific feature, or use `main` as a clean base to experiment on your own.
+
+| Branch | Description |
+|--------|-------------|
+| `acl` | Access control lists (ACL) with client authentication using username and password |
+
 ## Setup
 
 1. Install Mosquitto, clients, and tmux:
