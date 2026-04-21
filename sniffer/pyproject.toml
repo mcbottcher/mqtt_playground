@@ -1,0 +1,6 @@
+[project]
+name = "mqtt-sniffer"
+version = "0.1.0"
+description = "Packet sniffer for MQTT traffic"
+requires-python = ">=3.10"
+dependencies = ["scapy>=2.5.0"]

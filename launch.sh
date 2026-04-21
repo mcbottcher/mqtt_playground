@@ -34,5 +34,9 @@ tmux send-keys -t mqtt:1.2 "cd '$REPO_ROOT/client_b' && uv run main.py" Enter
 # Pane 2 (bottom right): Start client_a (broker has already had time to start)
 tmux send-keys -t mqtt:1.3 "cd '$REPO_ROOT/client_a' && uv run main.py" Enter
 
+# Create a new window for the packet sniffer
+tmux new-window -t mqtt -n sniffer
+tmux send-keys -t mqtt:sniffer "cd '$REPO_ROOT/sniffer' && sudo /home/mcb/.local/bin/uv run python main.py" Enter
+
 # Attach to the mqtt session and display it in the terminal
 tmux attach-session -t mqtt

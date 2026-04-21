@@ -1,3 +1,3 @@
-from .client import MQTTClient
+from .client import MQTTClient, PlainMQTTClient, TLSMQTTClient
 
-__all__ = ["MQTTClient"]
+__all__ = ["MQTTClient", "PlainMQTTClient", "TLSMQTTClient"]
