@@ -8,6 +8,8 @@ Each branch demonstrates a different MQTT concept. You can checkout a branch to 
 | Branch | Description |
 |--------|-------------|
 | `acl` | Access control lists (ACL) with client authentication using username and password |
+| `tls` | Using TLS for encrypted messaging between broker and client |
+
 
 ## Setup
 
